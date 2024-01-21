@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Color Changer Hands-On</title>
+    <style>
+        body {
+            background-color: hwb(333 77% 7%);
+            text-align: center;
+            height: 90vh;
+        }
+       
+        #circle {
+            background-color: seagreen;
+            width: 50vh;
+            height: 50vh;
+            clip-path: circle();
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+        }
+
+        button {
+            height: 60px;
+            width: 150px;
+            border-radius: 60%;
+            background-color: #ee82a6;
+            font-weight: bolder;
+            font-size: 30px;
+            color: rgb(46, 5, 87);
+            top: 70%;
+            position: absolute; 
+            z-index: 1; 
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        button:hover {
+            border: 2px solid rgb(21, 206, 101); 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px seagreen; 
+        }
+
+
+        @media (max-width: 400px) {
+            #circle {
+                width: 80vw;
+                height: 80vw;
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript colorChanger() Hands-On</h1>
+    <div id="circle"></div><br>
+    <button id="btn">Click</button>
+
+    <script>
+        const circle = document.getElementById("circle");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener('click', changeColor);
+
+        function changeColor() {
+            if (circle.style.backgroundColor === "cornflowerblue") {
+                circle.style.backgroundColor = "seagreen";
+            } else {
+                circle.style.backgroundColor = "cornflowerblue";
+            }
+        }
+    </script>
+</body>
+</html>
